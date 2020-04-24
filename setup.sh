@@ -16,7 +16,8 @@ chown -R builder:builder /home/builder/rpmbuild
 # Install Apache Traffic Server dependencies
 /bin/yum -y install autoconf automake libtool pkgconfig perl-ExtUtils-MakeMaker \
     gcc openssl-devel pcre-devel ncurses-devel libcurl-devel libcap-devel \
-    hwloc-devel flex git python3 rpmdevtools rpm-build gnupg2
+    hwloc-devel flex git python3 rpmdevtools rpm-build gnupg2 \
+    boost-devel tcl-devel xz-devel yaml-cpp-devel
 
 # Clean up for smaller image size
 /bin/yum clean all && rm -rf /var/cache/yum
