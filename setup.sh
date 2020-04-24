@@ -6,6 +6,11 @@ set -x
 # Install Development tools
 yum -y groupinstall "Development Tools"
 
+# Install EPEL, needed for yaml-cpp-devel
+yum -y install yum-utils
+yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum-config-manager --enable epel
+
 # rpmbuild command recommends to use `builder:builder` as user:group.
 /bin/yum -y install shadow-utils
 /usr/sbin/useradd -u 1000 builder
